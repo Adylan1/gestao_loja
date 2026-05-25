@@ -6,8 +6,9 @@
 
 body {
     background: #4d4c4c;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     color: #333;
+    line-height: 1.6;
     min-height: 100vh;
 }
 
@@ -18,68 +19,74 @@ body {
     background: #ffffff;
     display: flex;
     overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.18);
+    border-radius: 4px; /* leve imperfeição */
 }
 
 /* ====================== SIDEBAR ====================== */
 .sidebar {
-    width: 280px;
+    width: 275px; /* não tão redondo */
     background: #1e1e1e;
     color: #ebbe5e;
-    padding: 25px 0;
+    padding: 28px 0 20px;
     display: flex;
     flex-direction: column;
-    border-right: 1px solid #333;
+    border-right: 1px solid #2a2a2a;
 }
 
 .logo {
-    padding: 0 25px 35px;
-    font-size: 29px;
-    font-weight: bold;
-    letter-spacing: 1px;
+    padding: 0 26px 38px;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    position:calc(left) ;
 }
 
+.logo::after {
+    content: '';
+    position: absolute;
+    bottom: 22px;
+    left: 26px;
+    width: 32px;
+    height: 2px;
+    background: #bdb7da5d;
+    opacity: 0.6;
+}
+
+/* Navegação com mais personalidade */
 .sidebar nav a {
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 15px 25px;
+    gap: 15px;
+    padding: 14px 26px;
     color: #e0e0e0;
     text-decoration: none;
-    transition: 0.3s;
-    font-size: 15.5px;
+    transition: all 0.25s ease;
+    font-size: 15.2px;
+    position: relative;
 }
 
 .sidebar nav a:hover,
 .sidebar nav a.active {
-    background: #ebbe5e;
+    background: #e9e9e9;
     color: #1e1e1e;
+    transform: translateX(6px);
 }
 
 .sidebar nav a .material-symbols-outlined {
-    font-size: 24px;
+    font-size: 23px;
+    transition: transform 0.3s ease;
 }
 
-.logout {
-    margin-top: auto;
-    padding: 15px 0;
-    border-top: 1px solid #333;
-}
-
-.logout a {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 15px 25px;
-    color: #e0e0e0;
-    text-decoration: none;
+.sidebar nav a:hover .material-symbols-outlined {
+    transform: scale(1.1);
 }
 
 /* ====================== MAIN CONTENT ====================== */
 .main-content {
     flex: 1;
-    padding: 25px;
-    background: #f8f8f8;
+    padding: 32px 30px;
+    background: #ffffff; /* tom mais quente e "papel" */
     overflow-y: auto;
 }
 
@@ -88,126 +95,67 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: white;
-    padding: 18px 28px;
-    border-radius: 16px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+    background: rgb(255, 255, 255);
+    padding: 20px 28px;
+    border-radius: 18px;
+    margin-bottom: 34px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.07);
+    border: 1px solid #f0f0f0;
 }
 
 .topbar-left h2 {
-    font-size: 28px;
-    font-weight: 600;
-    color: #222;
-}
-
-.topbar-right {
-    display: flex;
-    align-items: center;
-    gap: 22px;
+    font-size: 27px;
+    font-weight: 700;
+    color: #1f1f1f;
+    letter-spacing: -0.4px;
 }
 
 .search-box {
-    display: flex;
-    align-items: center;
-    background: #f1f1f1;
-    border-radius: 14px;
-    padding: 10px 16px;
+    background: #f4f3f1;
+    border-radius: 50px; /* mais orgânico */
+    padding: 11px 18px;
     width: 340px;
-}
-
-.search-box .material-symbols-outlined {
-    color: #777;
-    margin-right: 10px;
+    border: 1px solid #eae8e4;
 }
 
 .search-box input {
-    border: none;
-    background: transparent;
-    outline: none;
-    width: 100%;
-    font-size: 15.5px;
-}
-
-.user-info {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.user-name {
-    font-weight: 600;
-    color: #333;
-}
-
-.avatar {
-    width: 45px;
-    height: 45px;
-    background: #1e1e1e;
-    color: #ebbe5e;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 15.3px;
 }
 
 /* ====================== CARDS ====================== */
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 22px;
+    grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+    gap: 26px;
 }
 
 .card {
     background: white;
-    padding: 26px 22px;
-    border-radius: 16px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    padding: 28px 24px;
+    border-radius: 18px;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
     display: flex;
     align-items: flex-start;
-    gap: 20px;
-    transition: all 0.3s;
+    gap: 22px;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #f5f5f5;
 }
 
 .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
 }
 
+/* Pequenos detalhes humanos */
 .card .material-symbols-outlined {
-    font-size: 46px;
+    font-size: 48px;
     color: #ebbe5e;
-    margin-top: 4px;
-}
-
-.card div h3 {
-    font-size: 15px;
-    color: #666;
-    font-weight: 500;
-}
-
-.card div .value {
-    font-size: 29px;
-    font-weight: 700;
-    color: #1e1e1e;
-    margin: 6px 0 4px 0;
-}
-
-.card .warning {
-    color: #e74c3c;
-}
-
-.card small {
-    color: #999;
-    font-size: 13.5px;
+    filter: drop-shadow(0 2px 4px rgba(235, 190, 94, 0.2));
 }
 
 /* ====================== RESPONSIVO ====================== */
 @media (max-width: 1024px) {
-    .sidebar { width: 250px; }
-    .search-box { width: 280px; }
+    .sidebar { width: 255px; }
 }
 
 @media (max-width: 768px) {
@@ -215,15 +163,15 @@ body {
     .sidebar {
         width: 100%;
         flex-direction: row;
-        align-items: center;
-        padding: 12px 20px;
-        height: auto;
+        flex-wrap: wrap;
+        padding: 14px 20px;
+        gap: 8px;
     }
-    .main-content { padding: 18px; }
-    .topbar { flex-direction: column; gap: 15px; align-items: stretch; }
-    .search-box { width: 100%; }
+    .main-content { padding: 20px; }
+    .topbar { flex-direction: column; gap: 18px; }
 }
 
 @media (max-width: 480px) {
     .cards { grid-template-columns: 1fr; }
+    .logo { font-size: 24px; }
 }
