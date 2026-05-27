@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Venda - PDV</title>
+    
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../admin/css/admin.css">
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>Gestão Loja</h2>
+            <p style="font-size: 0.9rem; color: #aaa; text-align: center;">Vendedor</p>
+        </div>
+        
+        <div class="menu">
+            <a href="dashboard.html" class="menu-item">Dashboard</a>
+            <a href="nova-venda.html" class="menu-item active">Nova Venda</a>
+        </div>
+    </div>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="main-content">
+        
+        <div class="header">
+            <h1>Nova Venda (PDV)</h1>
+            <div class="user-info">
+                <span>Bem-vindo, <strong>Carlos Vendedor</strong></span>
+                <button onclick="logout()" class="btn-sair">Sair</button>
+            </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            
+            <!-- Lista de Produtos -->
+            <div class="card">
+                <h2>Produtos</h2>
+                <input type="text" id="search-pdv" placeholder="Pesquisar produto..." style="width: 100%; padding: 10px; margin-bottom: 15px;">
+                
+                <div id="lista-pdv" style="max-height: 500px; overflow-y: auto;"></div>
+            </div>
+
+            <!-- Carrinho -->
+            <div class="card">
+                <h2>Carrinho</h2>
+                <table class="tabela">
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Qtd</th>
+                            <th>Preço</th>
+                            <th>Subtotal</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="carrinho"></tbody>
+                </table>
+
+                <div style="margin-top: 20px; text-align: right;">
+                    <h2>Total: <span id="total-carrinho">0 MZN</span></h2>
+                    <button onclick="finalizarVenda()" class="btn btn-primary" style="margin-top: 15px; padding: 12px 30px; font-size: 1.1rem;">
+                        Finalizar Venda
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="style.css"></script>
+    <script src="nova-venda.js"></script>
+</body>
+</html>

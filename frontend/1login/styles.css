@@ -17,69 +17,20 @@ body{
 }
 
 .container{
-
-    width: 100%;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
     max-width: 1400px;
     min-height: 850px;
-    background: rgb(255, 255, 255);
+    background: #c9c9c9;
     display: flex;
     border-radius: 25px;
     overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-}
-
-/*LADO ESQUERDO*/
-.lado-esquerdo {
-    width: 50%;
-    background: #000000;
-    color: #ebbe5e;
-    padding: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-}
-
-.logo {
-    font-size: 32px;
-    font-weight: bold;
-}
-
-
-/*texto principal*/
-.content h2{
-    font-size: 64px;
-    line-height: 1.1;
-
-    margin-bottom: 25px;
-}
-
-.content p{
-    font-size: 20px;
-    line-height: 1.7;
-    color: #d8c9a8;
-    max-width: 520px;margin-bottom: 35px;
-}
-
-/*lista*/
-
-.content ul{
-    list-style: none;
-}
-
-.content ul li{
-    margin-bottom: 15px;
-    color: #e6d9bb;
+    box-shadow: 0 10px 40px rgba(0, 255, 34, 0.15);
 }
 
 /*lado-direito*/
-.lado-direito {
-    width: 50%;
-    background: #c9c9c9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .login-box{
     width: 420px;
@@ -112,6 +63,9 @@ body{
     font-weight: bold;
     cursor: pointer;
 }
+input {
+    box-shadow: 0 10px 40px rgba(17, 255, 9, 0.15)
+}
 
 .input-group{
     margin-bottom: 25px; /*separação de espasamento*/
@@ -121,6 +75,7 @@ body{
     display: block;
     margin-bottom: 10px;
     font-weight: bold; 
+   
 }
 .input-group input{
 
@@ -197,67 +152,74 @@ button:hover{
 
     color: #777;
 }
-
 /* ========================= */
 /* RESPONSIVIDADE */
 /* ========================= */
 
-@media(max-width: 900px){
+@media (max-width: 900px){
+
+    body{
+        padding: 10px;
+    }
 
     .container{
+        width: 100%;
+        min-height: auto;
         flex-direction: column;
-        height: auto;
     }
 
-    .lado-esquerdo,
     .lado-direito{
         width: 100%;
-    }
-
-    .lado-esquerdo{
-        padding: 40px 30px;
-    }
-
-    .content h2{
-        font-size: 42px;
-    }
-
-    .lado-direito{
-        padding: 50px 20px;
+        padding: 40px 20px;
     }
 
     .login-box{
         width: 100%;
-        max-width: 400px;
-    }
-
-}
-@media(max-width: 600px){
-
-    .lado-esquerdo{
-        padding: 30px 20px;
-    }
-
-    .content h2{
-        font-size: 34px;
-    }
-
-    .content p{
-        font-size: 15px;
+        max-width: 100%;
     }
 
     .login-box h1{
-        font-size: 36px;
+        font-size: 38px;
     }
 
-    .rodape{
-        flex-direction: column;
-        gap: 15px;
+    .Tipo_Acesso{
+        gap: 20px;
+        flex-wrap: wrap;
     }
 
     button{
-        padding: 16px;
         font-size: 16px;
     }
+}
 
+@media (max-width: 600px){
+
+    .container{
+        border-radius: 15px;
+    }
+
+    .lado-direito{
+        padding: 30px 15px;
+    }
+
+    .login-box h1{
+        font-size: 30px;
+    }
+
+    .small-title{
+        font-size: 10px;
+    }
+
+    .input-group input{
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    button{
+        padding: 15px;
+    }
+
+    .rodape{
+        font-size: 12px;
+    }
 }

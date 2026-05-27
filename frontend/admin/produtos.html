@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - Gestão de Loja</title>
+    
+    <!-- CSS Geral -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- CSS Admin (para todas páginas menos dashboard) -->
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>Gestão Loja</h2>
+        </div>
+        
+        <div class="menu">
+            <a href="dashboard.html" class="menu-item">Dashboard</a>
+            <a href="produtos.html" class="menu-item active">Produtos</a>
+            <a href="stock.html" class="menu-item">Stock</a>
+            <a href="vendas.html" class="menu-item">Vendas</a>
+            <a href="relatorios.html" class="menu-item">Relatórios</a>
+            <a href="utilizadores.html" class="menu-item">Utilizadores</a>
+        </div>
+    </div>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="main-content">
+        
+        <div class="header">
+            <h1>Gestão de Produtos</h1>
+            <div class="user-info">
+                <span>Bem-vindo, <strong>Admin</strong></span>
+                <button onclick="logout()" class="btn-sair">Sair</button>
+            </div>
+        </div>
+
+        <!-- Barra de Ações -->
+        <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <input type="text" id="search" placeholder="Pesquisar produto..." style="padding: 10px; width: 300px; border: 1px solid #ccc; border-radius: 5px;">
+                <button onclick="abrirModal()" class="btn btn-primary">+ Novo Produto</button>
+            </div>
+
+            <!-- Tabela de Produtos -->
+            <table class="tabela" id="tabela-produtos">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Categoria</th>
+                        <th>Preço (MZN)</th>
+                        <th>Stock</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-produtos">
+                    <!-- Preenchido pelo JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal para adicionar/editar produto -->
+    <div id="modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2 id="modal-titulo">Novo Produto</h2>
+            <form id="form-produto">
+                <div class="form-group">
+                    <label>Nome do Produto</label>
+                    <input type="text" id="nome" required>
+                </div>
+                <div class="form-group">
+                    <label>Categoria</label>
+                    <select id="categoria" required>
+                        <option value="">Selecione...</option>
+                        <option value="Eletrónicos">Eletrónicos</option>
+                        <option value="Roupa">Roupa</option>
+                        <option value="Alimentos">Alimentos</option>
+                        <option value="Bebidas">Bebidas</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Preço (MZN)</label>
+                    <input type="number" id="preco" required>
+                </div>
+                <div class="form-group">
+                    <label>Quantidade em Stock</label>
+                    <input type="number" id="stock" required>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <button type="button" onclick="salvarProduto()" class="btn btn-primary">Salvar</button>
+                    <button type="button" onclick="fecharModal()" style="margin-left: 10px;">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/produtos.js"></script>
+    <script src="produtos.js"></script>
+</body>
+</html>

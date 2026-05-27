@@ -1,0 +1,170 @@
+/* ==================== CSS GERAL ADMIN (produtos, stock, vendas, etc.) ==================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 220px;
+    background-color: #1e1e1e;
+    color: white;
+    padding-top: 20px;
+    z-index: 100;
+}
+
+.sidebar-header {
+    padding: 0 20px 30px 20px;
+    border-bottom: 1px solid #333;
+    margin-bottom: 20px;
+}
+
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.menu {
+    padding: 0 10px;
+}
+
+.menu-item {
+    display: block;
+    padding: 14px 20px;
+    color: #ddd;
+    text-decoration: none;
+    margin-bottom: 4px;
+    border-radius: 6px;
+}
+
+.menu-item:hover,
+.menu-item.active {
+    background-color: #333;
+    color: white;
+}
+
+/* Conteúdo Principal */
+.main-content {
+    margin-left: 220px;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.header h1 {
+    font-size: 1.8rem;
+}
+
+/* Botões */
+.btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #333;
+}
+
+.btn-danger {
+    background-color: #c0392b;
+    color: white;
+}
+
+/* Tabela */
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.tabela th, .tabela td {
+    padding: 14px 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.tabela th {
+    background-color: #f0f0f0;
+    font-weight: 600;
+    color: #222;
+}
+
+.tabela tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Formulário */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Card */
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+}
+
+/* User Info */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-sair {
+    background-color: #c0392b;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
