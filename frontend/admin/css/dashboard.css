@@ -1,177 +1,114 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* ==================== ESTILOS DO DASHBOARD ==================== */
 
-body {
-    background: #4d4c4c;
-    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    color: #333;
-    line-height: 1.6;
-    min-height: 100vh;
-}
-
-/* ====================== CONTAINER ====================== */
-.container {
-    width: 100%;
-    min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    overflow: hidden;
-    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.18);
-    border-radius: 4px; /* leve imperfeição */
-}
-
-/* ====================== SIDEBAR ====================== */
+/* Layout Principal */
 .sidebar {
-    width: 275px; /* não tão redondo */
-    background: #1e1e1e;
-    color: #ebbe5e;
-    padding: 28px 0 20px;
-    display: flex;
-    flex-direction: column;
-    border-right: 1px solid #2a2a2a;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 220px;
+    background-color: #1e1e1e;
+    color: white;
+    padding-top: 20px;
 }
 
-.logo {
-    padding: 0 26px 38px;
-    font-size: 15px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    position:calc(left) ;
+.sidebar-header {
+    padding: 0 20px 30px 20px;
+    border-bottom: 1px solid #333;
+    margin-bottom: 20px;
 }
 
-.logo::after {
-    content: '';
-    position: absolute;
-    bottom: 22px;
-    left: 26px;
-    width: 32px;
-    height: 2px;
-    background: #bdb7da5d;
-    opacity: 0.6;
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 1.6rem;
+    text-align: center;
 }
 
-/* Navegação com mais personalidade */
-.sidebar nav a {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 14px 26px;
-    color: #e0e0e0;
+.menu {
+    padding: 0 10px;
+}
+
+.menu-item {
+    display: block;
+    padding: 14px 20px;
+    color: #ddd;
     text-decoration: none;
-    transition: all 0.25s ease;
-    font-size: 15.2px;
-    position: relative;
+    margin-bottom: 4px;
+    border-radius:6px;
 }
 
-.sidebar nav a:hover,
-.sidebar nav a.active {
-    background: #e9e9e9;
-    color: #1e1e1e;
-    transform: translateX(6px);
+.menu-item:hover,
+.menu-item.active {
+    background-color: #333;
+    color: white;
 }
 
-.sidebar nav a .material-symbols-outlined {
-    font-size: 23px;
-    transition: transform 0.3s ease;
-}
-
-.sidebar nav a:hover .material-symbols-outlined {
-    transform: scale(1.1);
-}
-
-/* ====================== MAIN CONTENT ====================== */
 .main-content {
-    flex: 1;
-    padding: 32px 30px;
-    background: #ffffff; /* tom mais quente e "papel" */
-    overflow-y: auto;
+    margin-left: 220px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    min-height: 100vh;
 }
 
-/* ====================== TOPBAR ====================== */
-.topbar {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgb(255, 255, 255);
-    padding: 20px 28px;
-    border-radius: 18px;
-    margin-bottom: 34px;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.07);
-    border: 1px solid #f0f0f0;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd; /*linha abaixo do dashboard*/
 }
 
-.topbar-left h2 {
-    font-size: 27px;
-    font-weight: 700;
-    color: #1f1f1f;
-    letter-spacing: -0.4px;
-}
-
-.search-box {
-    background: #f4f3f1;
-    border-radius: 50px; /* mais orgânico */
-    padding: 11px 18px;
-    width: 340px;
-    border: 1px solid #eae8e4;
-}
-
-.search-box input {
-    font-size: 15.3px;
-}
-
-/* ====================== CARDS ====================== */
-.cards {
+.cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
-    gap: 26px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
 }
 
 .card {
-    background: white;
-    padding: 28px 24px;
-    border-radius: 18px;
-    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
-    display: flex;
-    align-items: flex-start;
-    gap: 22px;
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid #f5f5f5;
+    background: rgb(206, 206, 204);
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
+.card-info {
+    text-align: center;
 }
 
-/* Pequenos detalhes humanos */
-.card .material-symbols-outlined {
-    font-size: 48px;
-    color: #ebbe5e;
-    filter: drop-shadow(0 2px 4px rgba(235, 190, 94, 0.2));
+.card-titulo {
+    color: #555;
+    margin: 0 0 8px 0;
+    font-size: 1rem;
 }
 
-/* ====================== RESPONSIVO ====================== */
-@media (max-width: 1024px) {
-    .sidebar { width: 255px; }
+.card-numero {
+    margin: 0;
+    font-size: 2rem;
+    color: #1e1e1e;
 }
 
-@media (max-width: 768px) {
-    .container { flex-direction: column; }
-    .sidebar {
-        width: 100%;
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 14px 20px;
-        gap: 8px;
-    }
-    .main-content { padding: 20px; }
-    .topbar { flex-direction: column; gap: 18px; }
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-@media (max-width: 480px) {
-    .cards { grid-template-columns: 1fr; }
-    .logo { font-size: 24px; }
+.tabela th, .tabela td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.tabela th {
+    background-color: #f0f0f0;
+    font-weight: 600;
+}
+
+.btn-sair {
+    background-color: #c0392b;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 40px;
+    cursor: pointer;
 }
